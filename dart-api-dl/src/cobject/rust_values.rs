@@ -14,7 +14,7 @@
 
 use std::{convert::TryInto, ffi::c_void};
 
-use dart_api_dl_sys::_Dart_CObject__bindgen_ty_1__bindgen_ty_5;
+use xayn_dart_api_dl_sys::_Dart_CObject__bindgen_ty_1__bindgen_ty_5;
 
 use crate::ports::SendPort;
 

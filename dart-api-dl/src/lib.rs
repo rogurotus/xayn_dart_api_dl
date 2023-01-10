@@ -42,4 +42,4 @@ mod utils;
 
 pub use lifecycle::*;
 
-pub use dart_api_dl_sys::ILLEGAL_PORT;
+pub use xayn_dart_api_dl_sys::ILLEGAL_PORT;

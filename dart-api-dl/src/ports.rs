@@ -19,7 +19,7 @@ use std::{
     ops::Deref,
 };
 
-use dart_api_dl_sys::{
+use xayn_dart_api_dl_sys::{
     Dart_CObject,
     Dart_CloseNativePort_DL,
     Dart_NewNativePort_DL,
@@ -383,7 +383,7 @@ impl From<UninitializedFunctionSlot> for PostingMessageFailed {
 
 #[cfg(test)]
 mod tests {
-    use dart_api_dl_sys::{Dart_NativeMessageHandler_DL, Dart_Port_DL};
+    use xayn_dart_api_dl_sys::{Dart_NativeMessageHandler_DL, Dart_Port_DL};
     use static_assertions::{assert_impl_all, assert_type_eq_all};
 
     use super::*;

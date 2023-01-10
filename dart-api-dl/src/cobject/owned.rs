@@ -17,7 +17,7 @@ use std::{
     ffi::{c_void, CString, NulError},
 };
 
-use dart_api_dl_sys::{
+use xayn_dart_api_dl_sys::{
     Dart_CObject,
     Dart_CObject_Type,
     _Dart_CObject__bindgen_ty_1,

@@ -14,7 +14,7 @@
 
 use std::ffi::c_void;
 
-use dart_api_dl_sys::Dart_InitializeApiDL;
+use xayn_dart_api_dl_sys::Dart_InitializeApiDL;
 
 use displaydoc::Display;
 use once_cell::sync::OnceCell;

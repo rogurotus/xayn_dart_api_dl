@@ -19,7 +19,7 @@ use std::{
     slice,
 };
 
-use dart_api_dl_sys::{Dart_CObject, Dart_CObject_Type};
+use xayn_dart_api_dl_sys::{Dart_CObject, Dart_CObject_Type};
 
 use crate::{
     ports::SendPort,
