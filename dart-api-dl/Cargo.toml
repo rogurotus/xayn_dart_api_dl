@@ -6,7 +6,7 @@ license = { workspace = true }
 rust-version = { workspace = true }
 
 [dependencies]
-dart-api-dl-sys = { package = "xayn-dart-api-dl-sys", version = "0.3.0" }
+xayn-dart-api-dl-sys = { path = "../dart-api-dl-sys", version = "0.3.0" }
 displaydoc = "0.2.3"
 once_cell = { workspace = true }
 static_assertions = "1.1.0"
