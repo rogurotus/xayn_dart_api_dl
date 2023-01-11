@@ -56,11 +56,11 @@ fn log(msg: impl Into<String>) {
 ///
 /// See `initialize_dart_api_dl` from the
 /// `dart-api-dl` crate.
-#[no_mangle]
-pub unsafe extern "C" fn initialize(init_data: InitData) -> bool {
-    log("pre-init");
-    initialize_dart_api_dl(init_data).is_ok()
-}
+// #[no_mangle]
+// pub unsafe extern "C" fn initialize(init_data: InitData) -> bool {
+//     log("pre-init");
+//     initialize_dart_api_dl(init_data).is_ok()
+// }
 
 #[no_mangle]
 pub extern "C" fn setup_cmd_handler(
