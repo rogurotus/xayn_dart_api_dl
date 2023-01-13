@@ -1,0 +1,65 @@
+name: Rust CI
+
+on:
+  push:
+  #   branches: ["main"]
+  # pull_request:
+  #   branches: ["main"]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  clippy:
+    strategy:
+      fail-fast: false
+      matrix:
+        platform:
+          - linux
+          - macos
+          - windows
+    runs-on: ${{ (matrix.platform == 'linux' &&   'ubuntu-22.04')
+              || (matrix.platform == 'windows' && 'windows-latest')
+              ||                                  'macos-latest' }}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: dtolnay/rust-toolchain@v1
+        with:
+          toolchain: stable
+          components: clippy
+
+      - run: make cargo.lint
+
+  rustfmt:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: dtolnay/rust-toolchain@v1
+        with:
+          toolchain: nightly
+          components: rustfmt
+
+      - run: make cargo.fmt check=yes
+
+  rustdoc:
+      strategy:
+        fail-fast: false
+        matrix:
+          platform:
+            - linux
+            - macos
+            - windows
+      runs-on: ${{ (matrix.platform == 'linux' &&   'ubuntu-22.04')
+                || (matrix.platform == 'windows' && 'windows-latest')
+                ||                                  'macos-latest' }}
+      steps:
+        - uses: actions/checkout@v3
+        - uses: dtolnay/rust-toolchain@v1
+          with:
+            toolchain: stable
+
+        - run: make cargo.doc

@@ -58,12 +58,7 @@ fn main() {
     update_crate_version(
         dl_major,
         dl_minor,
-        &workspace_path.join("dart-api-dl-sys/Cargo.toml"),
-    );
-    update_crate_version(
-        dl_major,
-        dl_minor,
-        &workspace_path.join("dart-api-dl/Cargo.toml"),
+        &workspace_path.join("./Cargo.toml"),
     );
 }
 
