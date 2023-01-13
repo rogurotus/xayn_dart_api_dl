@@ -38,8 +38,7 @@ static DL_ENABLED_VARS: &[&str] = &[
 
 fn main() {
     print!("cargo:rerun-if-env-changed=CARGO_PKG_VERSION");
-    let dart_src_dir = PathBuf::from(env::var_os("CARGO_MANIFEST_DIR").unwrap())
-        .join("dart-src");
+    let dart_src_dir = PathBuf::from(env::var_os("CARGO_MANIFEST_DIR").unwrap()).join("dart-src");
 
     let dl_header_path = dart_src_dir.join("dart_api_dl.h");
     let dl_version_header_path = dart_src_dir.join("dart_version.h");
