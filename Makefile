@@ -42,7 +42,6 @@ fmt: cargo.fmt
 lint: cargo.lint 
 
 
-
 ##################
 # Cargo commands #
 ##################
